@@ -15,13 +15,13 @@ export class Header extends Component {
 
     const authLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-        <span className="navbar-text mr-3">
+        <span className="navbar-text text-white mr-3">
           <strong>{user ? `Welcome ${user.username}` : ""}</strong>
         </span>
         <li className="nav-item">
           <button
             onClick={this.props.logout}
-            className="nav-link btn btn-info btn-sm text-light"
+            className="nav-link btn btn-warning btn-sm text-light"
           >
             Logout
           </button>
@@ -32,12 +32,12 @@ export class Header extends Component {
     const guestLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <li className="nav-item">
-          <Link to="/register" className="nav-link">
+          <Link to="/register" className="nav-link text-white">
             Register
           </Link>
         </li>
-        <li className="nav-item">
-          <Link to="/login" className="nav-link">
+        <li className="nav-item text-white">
+          <Link to="/login" className="nav-link text-white">
             Login
           </Link>
         </li>
@@ -45,7 +45,7 @@ export class Header extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <nav className="navbar navbar-expand-sm navbar-light bg-dark">
         <div className="container">
           <button
             className="navbar-toggler"
@@ -59,8 +59,8 @@ export class Header extends Component {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="#">
-              Lead Manager
+            <a className="navbar-brand text-white" href="#">
+              LEAD MANAGER
             </a>
           </div>
           {isAuthenticated ? authLinks : guestLinks}
