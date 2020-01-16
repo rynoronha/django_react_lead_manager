@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnErrors } from "./messages";
+import { createMessage, returnErrors } from "./messages";
 
 import {
   USER_LOADED,
@@ -49,7 +49,7 @@ export const login = (username, password) => dispatch => {
       });
     })
     .catch(err => {
-      dispatch(returnErrors(err.response.data, err.response.status));
+      dispatch(createMessage({ invalidCredentials: "Invalid Credentials" }));
       dispatch({
         type: LOGIN_FAIL
       });
